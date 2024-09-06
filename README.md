@@ -14,3 +14,4 @@ This repo uses the following libraries:
 - React v18.X
 - Tailwind v3.X
 - React Helmet Async v2.X
+- Vite SVGR v4.X
