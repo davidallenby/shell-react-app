@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import './Header.css';
+import Logo from '@components/Logo/Logo';
 
 interface HeaderProps {
   sticky?: boolean;
@@ -17,7 +18,7 @@ const Header: FC<HeaderProps> = ({
   <header className={setClasses({ sticky })} 
     data-testid="Header"
   >
-    Header Component
+    <Logo/>
   </header>
 );
 

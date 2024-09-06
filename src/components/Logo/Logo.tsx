@@ -1,12 +1,14 @@
-import React, { FC } from 'react';
-import './Logo.postcss';
+/// <reference types="vite-plugin-svgr/client" />
+import { FC } from 'react';
+import './Logo.css';
+import LogoSVG from '@assets/svg/react.svg?react';
 
-interface LogoProps {}
+interface LogoProps {
+  className?: string;
+}
 
-const Logo: FC<LogoProps> = () => (
-  <div className="Logo" data-testid="Logo">
-    Logo Component
-  </div>
+const Logo: FC<LogoProps> = ({ className }) => (
+  <LogoSVG className={className} />
 );
 
 export default Logo;
