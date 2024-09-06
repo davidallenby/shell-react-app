@@ -1,10 +1,10 @@
-import Button from "@components/Button"
+import Header from "@components/Header/Header"
 
 function App() {
 
   return (
     <>
-      <Button onClick={(e) => { console.log (e)}}>Test</Button>
+      <Header />
     </>
   )
 }

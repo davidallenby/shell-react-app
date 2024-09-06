@@ -1,6 +1,13 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler, ReactNode } from 'react';
 import './Button.css';
-import { ButtonProps } from './Button.interfaces';
+
+interface ButtonProps {
+  type?: 'button'|'submit'|'reset'|undefined;
+  theme?: 'primary'|'secondary'|'warn'|'danger'|'default';
+  disabled?: boolean;
+  children: ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
 
 // Themes for each type of button
 const buttonThemes: { [theme: string]: string } = {
