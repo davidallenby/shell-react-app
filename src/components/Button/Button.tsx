@@ -1,5 +1,6 @@
 import { FC, MouseEventHandler, ReactNode } from 'react';
 import './Button.css';
+import classNames from 'classnames';
 
 interface ButtonProps {
   type?: 'button'|'submit'|'reset'|undefined;
@@ -17,22 +18,12 @@ const buttonThemes: { [theme: string]: string } = {
   'warn': 'border-yellow-500 bg-yellow-500 text-black hover:bg-yellow-500/90',
   'link': 'text-primary underline-offset-4 hover:underline'
 }
-
-/**
- * Set the button theme depending on what is set via props. Will add default
- * classes before selecting the button theme
- *
- * @param {string} theme
- * @return {*}  {string}
- */
-const setTheme = (theme: string): string => {
-  let styleClass = `inline-flex items-center justify-center whitespace-nowrap
-  rounded-md text-sm font-medium transition-colors focus-visible:outline-none
-  focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none
-  disabled:opacity-50 px-3 py-2 border`;
-  styleClass += ` ${buttonThemes[theme]}`;
-  return styleClass;
-}
+// Base button styles
+const baseStyleClass = 
+`Button inline-flex items-center justify-center whitespace-nowrap
+rounded-md text-sm font-medium transition-colors focus-visible:outline-none
+focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none
+disabled:opacity-50 px-3 py-2 border`
 
 const Button: FC<ButtonProps> = ({
   children, 
@@ -40,15 +31,22 @@ const Button: FC<ButtonProps> = ({
   onClick,
   theme = 'secondary', 
   type = 'button'
-}) => (
-  <button type={type} 
-    className={`Button ${setTheme(theme)}`}
-    data-testid="Button"
-    disabled={disabled}
-    onClick={onClick}
-  >
-    { children }
-  </button>
-);
+}) => {
+
+  const btnStyleClass = classNames(
+    baseStyleClass, buttonThemes[theme]
+  )
+
+  return (
+    <button type={type} 
+      className={btnStyleClass}
+      data-testid="Button"
+      disabled={disabled}
+      onClick={onClick}
+    >
+      { children }
+    </button>
+  );
+}
 
 export default Button;

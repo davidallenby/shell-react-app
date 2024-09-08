@@ -15,3 +15,4 @@ This repo uses the following libraries:
 - Tailwind v3.X
 - React Helmet Async v2.X
 - Vite SVGR v4.X
+- Classnames v2.X (Conditionally join class names together)
