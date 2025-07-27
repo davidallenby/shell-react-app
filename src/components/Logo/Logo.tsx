@@ -1,7 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
-import type { FC } from 'react';
-import './Logo.css';
+
 import LogoSVG from '@assets/svg/react.svg?react';
+import type { FC } from 'react';
 
 interface LogoProps {
 	className?: string;
