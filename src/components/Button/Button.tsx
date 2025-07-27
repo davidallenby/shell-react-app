@@ -1,34 +1,30 @@
-import type { FC, MouseEventHandler, ReactNode } from 'react';
-import './Button.css';
 import classNames from 'classnames';
+import type { FC } from 'react';
+import { BUTTON_BASE_STYLE, BUTTON_PADDING, BUTTON_THEMES } from './config';
+import type { ButtonVariant } from './types';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	type?: 'button' | 'submit' | 'reset' | undefined;
-	theme?: 'primary' | 'secondary' | 'warn' | 'danger' | 'default';
-	disabled?: boolean;
-	children: ReactNode;
-	onClick: MouseEventHandler<HTMLButtonElement>;
+	variant?: ButtonVariant;
+	size?: 'sm' | 'md' | 'lg';
 }
 
-// Themes for each type of button
-const buttonThemes: { [theme: string]: string } = {
-	primary: 'border-primary bg-primary text-white hover:bg-primary/90',
-	danger: 'bg-red-500 text-white hover:bg-red-500/90',
-	secondary: 'border-slate-300 bg-white border text-primary hover:text-primary/80 hover:bg-slate-50',
-	warn: 'border-yellow-500 bg-yellow-500 text-black hover:bg-yellow-500/90',
-	link: 'text-primary underline-offset-4 hover:underline'
-};
-// Base button styles
-const baseStyleClass = `Button inline-flex items-center justify-center whitespace-nowrap
-rounded-md text-sm font-medium transition-colors focus-visible:outline-none
-focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none
-disabled:opacity-50 px-3 py-2 border`;
-
-const Button: FC<ButtonProps> = ({ children, disabled, onClick, theme = 'secondary', type = 'button' }) => {
-	const btnStyleClass = classNames(baseStyleClass, buttonThemes[theme]);
+const Button: FC<ButtonProps> = ({
+	children,
+	disabled,
+	onClick,
+	variant = 'default',
+	size = 'md',
+	type = 'button',
+	...props
+}) => {
+	const btnStyleClass = classNames(BUTTON_BASE_STYLE, BUTTON_THEMES[variant], {
+		// We don't want padding for link buttons
+		[BUTTON_PADDING[size]]: size && variant !== 'link'
+	});
 
 	return (
-		<button type={type} className={btnStyleClass} data-testid="Button" disabled={disabled} onClick={onClick}>
+		<button type={type} className={btnStyleClass} data-testid="Button" disabled={disabled} onClick={onClick} {...props}>
 			{children}
 		</button>
 	);
