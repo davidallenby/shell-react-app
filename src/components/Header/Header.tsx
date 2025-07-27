@@ -1,23 +1,21 @@
-import type { FC } from 'react'
-import './Header.css'
-import Logo from '@components/Logo/Logo'
+import Logo from '@components/Logo/Logo';
+import classNames from 'classnames';
+import type { FC } from 'react';
 
 interface HeaderProps {
-  sticky?: boolean
+	sticky?: boolean;
 }
 
-const setClasses = (props: HeaderProps): string => {
-  let styleClass = 'Header p-4 bg-white w-full'
-  if (props.sticky) {
-    styleClass += ' Header--sticky'
-  }
-  return styleClass
-}
+const Header: FC<HeaderProps> = ({ sticky = false }) => {
+	const styleClass = classNames('Header p-4 bg-white w-full', {
+		'sticky top-0 z-10': sticky
+	});
 
-const Header: FC<HeaderProps> = ({ sticky = false }) => (
-  <header className={setClasses({ sticky })} data-testid="Header">
-    <Logo />
-  </header>
-)
+	return (
+		<header className={styleClass} data-testid="Header">
+			<Logo />
+		</header>
+	);
+};
 
-export default Header
+export default Header;
