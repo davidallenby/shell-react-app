@@ -1,5 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import LogoSVG from '@assets/svg/react.svg?react';
 import type { FC } from 'react';
 

@@ -1,4 +1,4 @@
-import Logo from '@components/Logo/Logo';
+import { LogoLink } from '@components/routing/LogoLink/LogoLink';
 import classNames from 'classnames';
 import type { FC } from 'react';
 
@@ -13,7 +13,7 @@ const Header: FC<HeaderProps> = ({ sticky = false }) => {
 
 	return (
 		<header className={styleClass} data-testid="Header">
-			<Logo />
+			<LogoLink />
 		</header>
 	);
 };

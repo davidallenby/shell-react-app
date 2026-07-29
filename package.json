@@ -1,7 +1,7 @@
 {
 	"name": "shell-react-app",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -12,21 +12,20 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"classnames": "^2.5.1",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-helmet-async": "^2.0.5",
-		"vite-plugin-svgr": "^4.3.0"
+		"classnames": "2.5.1",
+		"react": "19.2.8",
+		"react-dom": "19.2.8",
+		"react-router": "8.3.0",
+		"vite-plugin-svgr": "5.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.1.2",
-		"@tailwindcss/vite": "^4.1.11",
-		"@types/react": "^18.3.23",
-		"@types/react-dom": "^18.3.7",
-		"@vitejs/plugin-react": "^4.7.0",
-		"tailwindcss": "^4.1.11",
-		"typescript": "^5.8.3",
-		"vite": "^5.4.19",
-		"vite-tsconfig-paths": "^5.1.4"
+		"@biomejs/biome": "2.5.6",
+		"@tailwindcss/vite": "4.3.3",
+		"@types/react": "19.2.17",
+		"@types/react-dom": "19.2.3",
+		"@vitejs/plugin-react": "6.0.4",
+		"tailwindcss": "4.3.3",
+		"typescript": "7.0.2",
+		"vite": "8.1.5"
 	}
 }
