@@ -1,12 +1,15 @@
 import Header from '@components/layout/Header/Header';
 import { BrowserRouter } from 'react-router';
+import './App.css';
+import { Footer } from '@components/layout/Footer/Footer';
 
 function App() {
 	return (
 		<BrowserRouter>
-			<div>
+			<div className="App">
 				<Header />
-				<h1 className="font-bold text-3xl text-red-500 underline">Hello world!</h1>
+				<main></main>
+				<Footer>Footer Content</Footer>
 			</div>
 		</BrowserRouter>
 	);

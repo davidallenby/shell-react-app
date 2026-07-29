@@ -1,0 +1,4 @@
+.Footer {
+  --footer-bg: #eee;
+  background: var(--footer-bg);
+}
