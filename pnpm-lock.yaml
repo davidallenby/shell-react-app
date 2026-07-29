@@ -4,10 +4,16 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@davidallenby/js-utils': link:../js-utils
+
 importers:
 
   .:
     dependencies:
+      '@davidallenby/js-utils':
+        specifier: link:../js-utils
+        version: link:../js-utils
       classnames:
         specifier: 2.5.1
         version: 2.5.1
