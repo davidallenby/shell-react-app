@@ -1,4 +1,13 @@
-/* Add tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+  }
+
+  a {
+    display: inline-flex;
+  }
+}

@@ -1,12 +1,18 @@
-import Header from "@components/Header/Header"
+import Header from '@components/layout/Header/Header';
+import { BrowserRouter } from 'react-router';
+import './App.css';
+import { Footer } from '@components/layout/Footer/Footer';
 
 function App() {
-
-  return (
-    <>
-      <Header />
-    </>
-  )
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Header />
+				<main></main>
+				<Footer>Footer Content</Footer>
+			</div>
+		</BrowserRouter>
+	);
 }
 
-export default App
+export default App;
