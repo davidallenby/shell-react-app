@@ -7,7 +7,7 @@ interface FooterProps extends ComponentProps<'footer'> {}
 
 export function Footer({ children, className, ...props }: FooterProps) {
 	return (
-		<footer {...props} className={classNames('Footer flex flex-col gap-4 p-4', className)}>
+		<footer {...props} className={classNames('Footer p-4', className)}>
 			<LogoLink />
 			<div>{children}</div>
 		</footer>
